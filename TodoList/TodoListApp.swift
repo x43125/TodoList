@@ -15,11 +15,17 @@ import SwiftUI
  */
 @main
 struct TodoListApp: App {
+    
+    // 可观察变量
+    @StateObject var listViewModel: ListViewModel = ListViewModel()
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {
                 ListView()
             }
+            // 全局变量
+            .environmentObject(listViewModel)
         }
     }
 }
