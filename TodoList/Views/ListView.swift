@@ -18,6 +18,11 @@ struct ListView: View {
             ForEach(listViewModel.items) { item in
                 // 对子view的引用
                 ListRowView(item: item)
+                    .onTapGesture {
+                        withAnimation(.linear) {
+                            listViewModel.updateItem(item: item)
+                        }
+                    }
             }
             .onDelete(perform: listViewModel.deleteItem)
             .onMove(perform: listViewModel.moveItem)
