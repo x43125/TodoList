@@ -14,7 +14,9 @@ struct ListView: View {
         // 列表
         ZStack {
             if listViewModel.items.isEmpty {
-                Text("No items")
+//                Text("No items")
+                NoItemView()
+                    .transition(AnyTransition.opacity.animation(.easeIn))
             } else {
                 List {
                     // for循环 类似 v-for
