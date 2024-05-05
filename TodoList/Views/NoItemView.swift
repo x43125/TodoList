@@ -18,7 +18,7 @@ struct NoItemView: View {
                 Text("There are no items!")
                     .font(.title)
                     .fontWeight(.semibold)
-                Text("Are you a person?Are you a person?Are you a person?Are you a person?Are you a person?Are you a person?Are you a person?Are you a person?Are you a person?")
+                Text("Are you a person? Are you a person? Are you a person? Are you a person? Are you a person? Are you a person? Are you a person? Are you a person? Are you a person?")
                     .padding(.bottom, 20)
                 NavigationLink (
                     destination: AddView(),
@@ -40,6 +40,7 @@ struct NoItemView: View {
                 .scaleEffect(animate ? 1.1 : 1.0)
                 .offset(y: animate ? -7 : 0)
             }
+            .frame(maxWidth: 400)
             .multilineTextAlignment(.center)
             .padding(40)
             .onAppear(perform: addAnimation)
